@@ -33,7 +33,9 @@ services:
       - 4200:80
     links:
       - kanban-app
-
+    labels:
+      kompose.service.type: LoadBalancer
 
 volumes:
   kanban-data:
+

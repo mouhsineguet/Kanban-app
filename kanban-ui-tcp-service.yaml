@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: C:\Users\user\Documents\devops\kanban_app\kanban-board\kompose.exe convert
+    kompose.service.type: LoadBalancer
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: kanban-ui-tcp
+  name: kanban-ui-tcp
+spec:
+  ports:
+    - name: "4200"
+      port: 4200
+      targetPort: 80
+  selector:
+    io.kompose.service: kanban-ui
+  type: LoadBalancer
+status:
+  loadBalancer: {}
